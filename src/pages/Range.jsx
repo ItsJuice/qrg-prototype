@@ -34,32 +34,6 @@ function Range() {
                 )
               })}
             </section>
-            
-            {/* <section>
-              <div className="split">
-                  <div className="col">
-                    <h3 className="range-info__title">Features</h3>
-                    <ul>
-                      {rangeData.features.map((feature) => {
-                        return (
-                          <li key={feature}>{feature}</li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-                  <div className="col">
-                    <h3 className="range-info__title">Packages</h3>
-                    <ul>
-                      {rangeData.packages.map((item) => {
-                        return (
-                          <li key={item}>{item}</li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-              </div>
-            </section> */}
-
           </div>
         }
       </div>

@@ -198,24 +198,6 @@ h1, h2, h3 {
       }
     }
   }
-
-  .split {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-
-    .col {
-      width: 50%;
-
-      ul {
-        padding-left: 20px;
-
-        li {
-          margin: 10px 0;
-        }
-      }
-    }
-  }
 }
 
 .add-casing {
