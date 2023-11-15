@@ -1,5 +1,5 @@
 import Hero from "../assets/Hero.png";
-import Pic4 from "../assets/pic4.png";
+import Pic1 from "../assets/pic1.png";
 import Pic2 from "../assets/pic2.png";
 import Pic3 from "../assets/pic3.png";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -16,7 +16,7 @@ function Home() {
           <h3><ChevronRightIcon /> My BMW App</h3>
         </div>
         <div className="home-grid__box">
-          <img src={Pic4} alt="" />
+          <img src={Pic1} alt="" />
           <h3><ChevronRightIcon /> Upcoming Models</h3>
         </div>
         <div className="home-grid__box">
