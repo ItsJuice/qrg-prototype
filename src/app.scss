@@ -1,0 +1,223 @@
+@font-face {
+  font-family: 'BMWTypeNext';
+  src:  url('/fonts/BMWTypeNextPro-Light.woff2') format('woff2'),
+        url('/fonts/BMWTypeNextProTT-Light.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BMWTypeNext';
+  src:  url('/fonts/BMWTypeNextPro-Regular.woff2') format('woff2'),
+        url('/fonts/BMWTypeNextProTT-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BMWTypeNext';
+  src:  url('/fonts/BMWTypeNextPro-Bold.woff2') format('woff2'),
+        url('/fonts/BMWTypeNextProTT-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+$breakpoint: 900px;
+$blue: #1c69d4;
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'BMWTypeNext';
+
+  @media screen and (min-width: $breakpoint) {
+    padding-left: 268px;
+  }  
+}
+
+h1, h2, h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.sidemenu {
+  width: 236px;
+  height: 100%;
+  padding: 16px;
+  background-color: #333;
+  color: white;
+  
+  .sidemenu__heading {
+    font-weight: 100;
+    margin: 10px 0;
+  }
+
+  .sidemenu__group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px -8px 30px;
+  }
+
+  .sidemenu__button {
+    margin: 10px;
+    background-color: white;
+    color: black;
+    border-color: transparent;
+
+    &:hover {
+      background-color: #ddd;
+      border-color: transparent;
+    }
+
+    &.selected {
+      color: white;
+      background-color: $blue;
+    }
+  }
+
+  .sidemenu__links {
+    margin-top: 10px;
+  }
+
+  .sidemenu__link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+.header {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid #ccc;
+
+  h1 {
+    font-size: 20px;
+
+    @media screen and (min-width: 800px) {
+      font-size: 30px;
+    }
+  }
+
+  .menu-button {
+    margin-right: 20px;
+  }
+
+  .logo {
+    flex-grow: 1;
+    text-align: right;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.hero {
+  @media screen and (min-width: $breakpoint) {
+    margin: -81px 0 0 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.home-grid {
+  margin: 20px;
+  
+  @media screen and (min-width: $breakpoint) {
+    display: flex;
+  }
+  
+  .home-grid__box {
+    margin: 0 0 30px 0;
+    cursor: pointer;
+
+    @media screen and (min-width: $breakpoint) {
+      width: 33%;
+      margin: 20px;
+    }
+
+    h3 {
+      margin-top: 10px;
+      
+
+      svg {
+        vertical-align: middle;
+        color: #1c69d4;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.page-container {
+  padding: 0 35px;
+  margin-top: 40px;
+  max-width: 1000px;
+}
+
+.range-info {
+  .range-info__title {
+    margin: 30px 0 10px;
+  }
+
+  .range-info__col1 {
+    display: inline-block;
+    width: 200px;
+
+    @media screen and (min-width: $breakpoint) {
+      width: 300px;
+    }
+  }
+
+  .range-info__accordion {
+    border-radius: 0 !important;
+    box-shadow: none;
+
+    &:before {
+      content: none;
+    }
+
+    & > :first-child {
+      border-bottom: 1px solid #ddd;
+      padding: 0;
+    }
+
+    svg {
+      path {
+        fill: $blue;
+      }
+    }
+  }
+
+  .split {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .col {
+      width: 50%;
+
+      ul {
+        padding-left: 20px;
+
+        li {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
+
+.add-casing {
+  text-transform: uppercase;
+}

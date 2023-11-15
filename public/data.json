@@ -1,0 +1,92 @@
+{
+    "G20" : {
+        "rangeName" : "3 Series Saloon",
+        "prices" : [
+            {
+                "modelName" : "320i Sport",
+                "price": "39,580"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "price": "40,830"
+            }
+        ],
+        "power" : [
+            {
+                "modelName" : "320i Sport",
+                "power": "184"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "power": "240"
+            }
+        ],
+        "performance" : [
+            {
+                "modelName" : "320i Sport",
+                "seconds": "7.1"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "seconds": "6.4"
+            }
+        ],
+        "features": [
+            "Acoustic Glass",
+            "Active Guard Plus",
+            "Ambient Lighting",
+            "Apple Carplay & Android Auto"
+        ],
+        "packages": [
+            "Comfort Pack",
+            "Comfort Plus Pack",
+            "Visibility Pack",
+            "Technology Pack"
+        ]
+    },
+    "G21" : {
+        "rangeName" : "3 Series Touring",
+        "prices" : [
+            {
+                "modelName" : "320i Sport",
+                "price": "41,615"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "price": "42,865"
+            }
+        ],
+        "power" : [
+            {
+                "modelName" : "320i Sport",
+                "power": "184"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "power": "240"
+            }
+        ],
+        "performance" : [
+            {
+                "modelName" : "320i Sport",
+                "seconds": "7.1"
+            },
+            {
+                "modelName" : "320i M Sport",
+                "seconds": "6.4"
+            }
+        ],
+        "features": [
+            "Acoustic Glass",
+            "Active Guard Plus",
+            "Ambient Lighting",
+            "Apple Carplay & Android Auto"
+        ],
+        "packages": [
+            "Comfort Pack",
+            "Comfort Plus Pack",
+            "Visibility Pack",
+            "Technology Pack"
+        ]
+    }
+}
