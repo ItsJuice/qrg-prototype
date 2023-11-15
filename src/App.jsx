@@ -1,4 +1,4 @@
-import './App.scss'
+import './app.scss'
 import Layout from './components/Layout';
 import Range from './pages/Range';
 import Home from './pages/Home';
