@@ -17,9 +17,13 @@ export default function SideMenu() {
     const fetchData = async () => {
       try {
         const response = await fetch(url);
-        const json = await response.json();
+        let json = await response.json();
+        json = json.sort((a, b) => {
+          if (a.name < b.name) { return -1; }
+          if (a.name > b.name) { return 1; }
+          return 0;
+        });
         setNavData(json);
-        
       } catch (error) {
         console.log("error", error);
       }
