@@ -19,7 +19,7 @@ export default function Header({ handleMenuToggle }) {
         >
           <MenuIcon />
         </IconButton>
-        <h1>Quick Reference Guide</h1>
+        <h1>Quick Reference Guide.</h1>
         <div className="logo">
           <a href="/"><img src={logo} alt="BMW Logo" /></a>
         </div>

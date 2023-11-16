@@ -27,7 +27,7 @@ function Range() {
         {rangeData &&
           <div className="range-info">
             <section>
-              <h2>{rangeData.rangeName}</h2>
+              <h2>{rangeData.rangeName}.</h2>
               {rangeData.models.map((model)=>{
                 return (
                   <Statccordion key={model.code} data={model} />

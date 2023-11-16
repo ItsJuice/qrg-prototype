@@ -45,7 +45,7 @@ export default function SideMenu() {
 
   return (
     <div className="sidemenu">
-      <h3 className="sidemenu__heading">Series</h3>
+      <h3 className="sidemenu__heading">Series.</h3>
       {navData && (
         <div className="sidemenu__group">
           {navData.map((series) => {
@@ -64,7 +64,7 @@ export default function SideMenu() {
       )}
       {selectedSeries && (
         <>
-          <h3 className="sidemenu__heading">Model Range</h3>
+          <h3 className="sidemenu__heading">Model Range.</h3>
           <div className="sidemenu__links">
             {selectedSeries.models.map((model) => {
               return (
@@ -76,6 +76,13 @@ export default function SideMenu() {
           </div>
         </>
       )}
+      <div className="coming-soon">
+        <h3>COMING SOON.</h3>
+        <h4>THE iX2 xDrive30 & X2 (U10)</h4>
+        <p>SOC: 11 Oct 2023</p>
+        <p>SOP: 01 Nov 2023</p>
+        <p>LAUNCH: 02 Mar 2024</p>
+      </div>
     </div>
   )
 }
