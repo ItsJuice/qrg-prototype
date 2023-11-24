@@ -1,28 +1,21 @@
 import Drawer from '@mui/material/Drawer';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import SideMenu from './SideMenu';
+import { breakpoint } from '../vars';
 
-export default function SidePanel({ drawerOpen, toggleMenu }) {
+export default function SidePanel({ drawerOpen, toggleMenu, container, selectRange }) {
+  const matches = useMediaQuery(`(min-width:${breakpoint})`);
   return (
     <>
       <Drawer
         anchor='left'
         open={drawerOpen}
         onClose={toggleMenu}
-        variant="temporary"
-        sx={{display: { xs: 'block', md: 'none' }}}
-        PaperProps={{style: {border: 'none'}}}
+        variant={matches ? "permanent" : "temporary"}
+        PaperProps={{ style: { border: 'none', position: 'absolute' } }}
+        ModalProps={{ container }}
       >
-        <SideMenu />
-      </Drawer>
-      <Drawer
-        anchor='left'
-        open={drawerOpen}
-        onClose={toggleMenu}
-        variant="permanent"
-        sx={{display: { xs: 'none', md: 'block' }}}
-        PaperProps={{style: {border: 'none'}}}
-      >
-        <SideMenu />
+        <SideMenu selectRange={selectRange} />
       </Drawer>
     </>
   )

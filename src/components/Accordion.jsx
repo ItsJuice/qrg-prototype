@@ -1,7 +1,38 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { breakpoint, blue } from '../vars';
+
+const AccordionCss = {
+  self: css`
+    border-radius: 0 !important;
+    box-shadow: none;
+
+    &:before {
+      content: none;
+    }
+
+    svg {
+      path {
+        fill: ${blue};
+      }
+    }
+  `,
+  col1: css`
+    display: inline-block;
+    width: 200px;
+
+    @media screen and (min-width: ${breakpoint}) {
+      width: 300px;
+    }
+  `,
+  title: css`
+    margin: 30px 0 10px;
+  `
+}
 
 function Statccordion(props) {
   const { data } = props;
@@ -12,44 +43,44 @@ function Statccordion(props) {
   }
 
   return (
-    <Accordion className="range-info__accordion">
+    <Accordion css={AccordionCss.self}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel3-content"
         id="panel3"
       >
-        <h3 className="range-info__title">{data.description}</h3>
+        <h3 css={AccordionCss.title}>{data.description}</h3>
       </AccordionSummary>
       <AccordionDetails>
         <p>
-          <span className="range-info__col1">Price</span>
+          <span css={AccordionCss.col1}>Price</span>
           <span>£{formatCurrency(data.price)}</span>
         </p>
         <p>
-          <span className="range-info__col1">Power</span>
+          <span css={AccordionCss.col1}>Power</span>
           <span>{data.power_output}</span>
         </p>
         <p>
-          <span className="range-info__col1">Performance(0-62)</span>
+          <span css={AccordionCss.col1}>Performance(0-62)</span>
           <span>{data.null_to_100kmh} sec</span>
         </p>
         <p>
-          <span className="range-info__col1">Transmission</span>
+          <span css={AccordionCss.col1}>Transmission</span>
           <span className="add-casing">{data.transmission}</span>
         </p>
         <p>
-          <span className="range-info__col1">Fuel Type</span>
+          <span css={AccordionCss.col1}>Fuel Type</span>
           <span className="add-casing">{data.vehicle_type}</span>
         </p>
         {data.energy_consumption_wltp && (
-          <p>
-          <span className="range-info__col1">Electric Consumption(WLTP)</span>
+        <p>
+          <span css={AccordionCss.col1}>Electric Consumption(WLTP)</span>
           <span>{data.energy_consumption_wltp} miles/kwh</span>
         </p>
         )}
         {data.electric_range_wltp && (
-          <p>
-          <span className="range-info__col1">Electric Range(WLTP)</span>
+        <p>
+          <span css={AccordionCss.col1}>Electric Range(WLTP)</span>
           <span>{data.electric_range_wltp}</span>
         </p>
         )}

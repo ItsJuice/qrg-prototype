@@ -5,9 +5,41 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quick Reference Guide - Juice Prototype</title>
+    <style>
+      * { box-sizing: border-box; }
+      body { margin:0;padding:0; }
+      .hero { position: relative; height: 300px; background-color: blue; }
+      h1 { position: absolute; top: 50px; left: 30px; color: white; }
+      .button { position: absolute; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: green; color: white; }
+      .modal-container { display: none; padding: 50px; background-color: rgba(240,240,240, 0.8); position: fixed; height: 100%; width: 100%; top: 0; overflow-y: scroll; }
+      .modal-container.open { display: block; }
+      .close { position: absolute; top:10px; right:10px; padding:10px; font-size:20px; background-color: black; color: white; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="hero">
+      <h1>BMW Launchpad Hero</h1>
+      <button id="qrg-button" class="button">Click me!</button>
+    </div>
+    <div id="modal" class="modal-container">
+      <button id="close" class="close">X</button>
+      <qrg-proto></qrg-proto>
+    </div>
+    <script>
+      var openButton = document.getElementById('qrg-button');
+      var closeButton = document.getElementById('close');
+
+      openButton.addEventListener("click",
+        function () {
+          document.getElementById("modal").classList.add("open");
+        }
+      )
+      closeButton.addEventListener("click",
+        function () {
+          document.getElementById("modal").classList.remove("open");
+        }
+      )
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

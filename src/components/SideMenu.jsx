@@ -1,13 +1,63 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { blue } from '../vars';
 
-export default function SideMenu() {
+export default function SideMenu({ selectRange }) {
   const [selectedSeries, setSelectedSeries] = useState();
   const [navData, setNavData] = useState();
-  const location = window.location.origin;
-  const { id }  = useParams();
   const url = "https://quick-reference-demo-8b88a82c8784.herokuapp.com/v1/model_ranges/navigation";
+
+  const SideMenuCss = {
+    self: css({
+      width: '236px',
+      height: '100%',
+      padding: '16px',
+      backgroundColor: '#333',
+      color: 'white'
+    }),
+    sideMenuGroup: css({
+      display: 'flex',
+      flexWrap: 'wrap',
+      margin: '10px -8px 30px'
+    }),
+    sideMenuButton: css({
+      margin: '10px',
+      backgroundColor: 'white',
+      color: 'black',
+      borderColor: 'transparent',
+      '&:hover': {
+        backgroundColor: '#ddd',
+        borderColor: 'transparent'
+      },
+      '&.selected': {
+        color: 'white',
+        backgroundColor: blue
+      }
+    }),
+    sideMenuLink: css({
+      display: 'block',
+      margin: '10px 0'
+    }),
+    comingSoon: css`
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
+
+      h3 {
+        margin-top: 35px;
+      }
+
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 0 0 10px;
+        font-size: 14px;
+      }
+    `
+  }
   
   const handleSeriesClick = (series) => {
     setSelectedSeries(series);
@@ -31,30 +81,19 @@ export default function SideMenu() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (id && navData) {
-      navData.forEach((series) => {
-        series.models.forEach((model) => {
-          if (model.name == id) {
-            setSelectedSeries(series);
-          }
-        })
-      })
-    }
-  }, [navData]);
-
   return (
-    <div className="sidemenu">
+    <div css={SideMenuCss.self}>
       <h3 className="sidemenu__heading">Series.</h3>
       {navData && (
-        <div className="sidemenu__group">
+        <div css={SideMenuCss.sideMenuGroup}>
           {navData.map((series) => {
             return (
               <Button
-                className={`sidemenu__button ${selectedSeries?.name == series.name ? "selected" : ""}`}
+                className={`${selectedSeries?.name == series.name ? "selected" : ""}`}
                 variant="outlined"
                 key={series.name}
                 onClick={() => handleSeriesClick(series)}
+                css={SideMenuCss.sideMenuButton}
               >
                 {series.name}
               </Button>
@@ -65,18 +104,24 @@ export default function SideMenu() {
       {selectedSeries && (
         <>
           <h3 className="sidemenu__heading">Model Range.</h3>
-          <div className="sidemenu__links">
+          <div>
             {selectedSeries.models.map((model) => {
               return (
                 <div key={model.name}>
-                  <a href={`${location}/${model.name}`} className="sidemenu__link">{model.title}</a>
+                  <span
+                    onClick={() => selectRange(model.name)}
+                    style={{ cursor: 'pointer' }}
+                    css={SideMenuCss.sideMenuLink}
+                  >
+                    {model.title}
+                  </span>
                 </div>
               )
             })}
           </div>
         </>
       )}
-      <div className="coming-soon">
+      <div css={SideMenuCss.comingSoon}>
         <h3>COMING SOON.</h3>
         <h4>THE iX2 xDrive30 & X2 (U10)</h4>
         <p>SOC: 11 Oct 2023</p>

@@ -1,26 +1,26 @@
-@font-face {
-  font-family: 'BMWTypeNext';
-  src:  url('/fonts/BMWTypeNextPro-Light.woff2') format('woff2'),
-        url('/fonts/BMWTypeNextProTT-Light.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'BMWTypeNext';
+//   src:  url('/fonts/BMWTypeNextPro-Light.woff2') format('woff2'),
+//         url('/fonts/BMWTypeNextProTT-Light.woff') format('woff');
+//   font-weight: 100;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'BMWTypeNext';
-  src:  url('/fonts/BMWTypeNextPro-Regular.woff2') format('woff2'),
-        url('/fonts/BMWTypeNextProTT-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'BMWTypeNext';
+//   src:  url('/fonts/BMWTypeNextPro-Regular.woff2') format('woff2'),
+//         url('/fonts/BMWTypeNextProTT-Regular.woff') format('woff');
+//   font-weight: 400;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'BMWTypeNext';
-  src:  url('/fonts/BMWTypeNextPro-Bold.woff2') format('woff2'),
-        url('/fonts/BMWTypeNextProTT-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'BMWTypeNext';
+//   src:  url('/fonts/BMWTypeNextPro-Bold.woff2') format('woff2'),
+//         url('/fonts/BMWTypeNextProTT-Bold.woff') format('woff');
+//   font-weight: 700;
+//   font-style: normal;
+// }
 
 $breakpoint: 900px;
 $blue: #1c69d4;
@@ -146,7 +146,6 @@ h1, h2, h3, h4 {
     h3 {
       margin-top: 10px;
       
-
       svg {
         vertical-align: middle;
         color: #1c69d4;
